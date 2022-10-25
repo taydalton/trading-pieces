@@ -1,0 +1,491 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styling */
+
+html,body{
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Sigmar One', cursive;
+}
+
+p,
+.navbar,
+figcaption {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+figcaption {
+    text-align: center;
+}
+
+/* Navigation Section */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5); */
+    background-color: #D96c06;
+    z-index: 100;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar li {
+    list-style: none;
+    padding-right: 3rem;
+}
+
+.nav-list {
+    display: flex;
+    padding-right: 4rem;
+}
+
+.logo {
+    width: 8rem;
+    padding-left: 2rem;
+ }
+
+ #hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+ }
+
+ #hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 0.4rem 2rem;
+    transition: 0.4s;
+ }
+
+ .open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+ }
+
+ .open .bar2 {
+    opacity: 0;
+ }
+
+ .open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+ }
+
+ .open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+ }
+
+ .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    background-color: #2292a4;
+ }
+
+ .mobile-menu a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+ }
+
+ .mobile-menu li {
+    list-style: none;
+ }
+
+ .mobile-menu a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+ }
+
+ @media only screen and (max-width: 50em) {
+    header nav {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+ }
+
+ /* Page Hero Section */
+
+ .page-hero img {
+    width: 85rem;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero-text {
+    text-align: center;
+    width: 100;
+    margin: auto 2rem;
+    background-color: white;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    color: #D96c06;
+}
+
+.hero-text h2 {
+    padding-bottom: 3rem;
+}
+
+.hero-text button {
+    background-color: #2292a4;
+    border: 1px solid #2292a4;
+    border-radius: 5px;
+    width: 7rem;
+    height: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.hero-text button:hover {
+    cursor: pointer;
+    background-color: #D96c06;
+    border: 1px solid #D96c06;
+    transition: background-color 0.2s, border 0.2s;
+}
+
+@media (max-width: 50em) {
+    .hero-container {
+        display: block;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Banner Section */
+
+.banner {
+    background-color: #2292a4;
+    width: 100%;
+    text-align: center;
+}
+
+.banner h2 {
+    margin: auto 10rem;
+    padding: 2rem 0;
+    font-size: 1.7rem;
+}
+
+@media (max-width: 50em) {
+    .banner h2 {
+        margin: auto 4rem;
+    }
+}
+
+@media (max-width: 23em) {
+    .banner h2 {
+        margin: auto 1rem;
+    }
+}
+
+/* How It Works Section */
+
+.how-it-works h1 {
+    color: #D96c06;
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.how-it-works p {
+    font-size: 1.5rem;
+    margin: auto 20rem;
+}
+
+@media (max-width: 50em) {
+    .how-it-works p {
+        margin: auto 5rem;
+    }
+}
+
+@media (max-width: 23em) {
+    .how-it-works p {
+        margin: auto 1.5rem;
+    }
+}
+
+/* Subscription Section */
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+}
+
+.subs h1 {
+    color: #D96c06;
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+.sub {
+    font-family: verdana;
+    border: 2px solid #D96c06;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+    margin: 2rem;
+    line-height: 2.5;
+}
+
+.sub-btn {
+    width: 8rem;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    background-color: #2292a4;
+    color: white;
+    border: 1px solid #2292a4;
+    border-radius: 5px;
+}
+
+.sub-two .sub-btn,
+.sub-one .sub-btn {
+    margin-top: 3.5rem;
+}
+
+.sub-three .sub-btn {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem; 
+}
+
+.sub-btn:hover {
+    cursor: pointer;
+    background-color: #D96c06;
+    border: 1px solid #D96c06;
+    transition: background-color 0.2s, border 0.2s;
+} 
+
+@media (max-width: 50em) {
+    .sub-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub {
+        width: 50%;
+    }
+
+    .sub-one .sub-btn,
+    .sub-two .sub-btn {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 23em) {
+    .sub {
+        width: 75%;
+    }
+}
+
+/* Puzzle Section */
+
+.puzzle-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.puzzle {
+    align-self: center;
+    justify-self: center;
+}
+
+figure img {
+    width: 35rem;
+}
+
+.puzzles h1 {
+    color: #D96c06;
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+figcaption {
+    font-size: 1.2rem;
+}
+
+figcaption:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+figure:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 50em) {
+    .puzzle-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    figure img {
+        width: 20rem;
+    }
+}
+
+/* Divider Section */
+
+.color-box {
+    width: 100%;
+    background-color: #2292a4;
+    padding: 3.5rem;
+    margin: 3rem 0;
+}
+
+/* About Section */
+
+.about h1 {
+    color: #D96c06;
+    font-size: 3rem;
+}
+
+.about p {
+    font-size: 1.5rem;
+    margin: 2rem 20rem;
+}
+
+@media (max-width: 50em) {
+    .about p {
+        margin: 2rem 5rem;
+    }
+}
+
+@media (max-width: 23em) {
+    .about p  {
+        margin: 1rem 1.5rem;
+    }
+}
+
+/* Footer Section */
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #D96c06;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.copy {
+    background-color: #D96c06;
+    padding: 0.5rem;
+}
+
+.foot-list p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
